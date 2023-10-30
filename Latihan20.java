@@ -1,24 +1,26 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package latihan20;
 
+package latihan20;
+import java.util.Scanner;
+        
 /**
  *
- * @author user 
- Nama              : Bintang Fajar Nusantara 
- Nim               : 22205028 
- Prodi             : Teknik Informatika 
- Kelas             : PBO 1
- Deskripsi Program : Program ini berisi program yang menampilkan Target Saldo Tabungan
+ * @author user
+ Nama              : Bintang Fajar Nusantara
+ Nim               : 22205028
+ Prodi             : Teknik Informatika
+ Kelas             : PBO1
+ Deskripsi Program : Program ini berisi program yang menampilkan target saldo tabungan 
+ *
  */
-import java.util.Scanner;
-
 public class Latihan20 {
+
     public static void main(String[] args) {
-         Scanner scanner = new Scanner(System.in);
-         // Input
+        Scanner scanner = new Scanner(System.in);
+        int bulan = 0;
+        
         System.out.print("Saldo Awal: ");
         int saldoAwal = scanner.nextInt();
 
@@ -26,16 +28,15 @@ public class Latihan20 {
         int bungaPerBulan = scanner.nextInt();
 
         System.out.print("saldo target: ");
-        int target = scanner.nextInt();
+        int saldoTarget = scanner.nextInt();
 
-        // Hitung saldo
-        for (int i = 1; i <= target; i++) {
-            saldoAwal += saldoAwal * bungaPerBulan / 100;
-            System.out.println("Saldo di bulan ke-" + i + " Rp." + saldoAwal);
-        }
+        
+        while (saldoAwal < saldoTarget) {
+            bulan++;
+            int bunga = saldoAwal * bungaPerBulan / 100 ;
+            saldoAwal += bunga;
+            System.out.println("Saldo di bulan ke-" + bulan + "= Rp." + saldoAwal);
             
-            
- 
-    }
-    
+ }
+}
 }
